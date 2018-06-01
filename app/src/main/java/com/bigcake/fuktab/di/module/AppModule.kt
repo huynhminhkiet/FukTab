@@ -2,8 +2,19 @@ package com.bigcake.fuktab.di.module
 
 import android.app.Application
 import dagger.Module
+import dagger.Provides
+import javax.inject.Singleton
 
 @Module
-class AppModule(application: Application) {
+class AppModule(val application: Application) {
 
+    @Provides
+    @Singleton
+    fun provideApplication() = application
+
+    @Provides
+    @Singleton
+    fun provideAppName() : String {
+        return "Fuck"
+    }
 }
